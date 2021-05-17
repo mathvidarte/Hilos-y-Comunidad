@@ -28,6 +28,15 @@ function draw () {
 
     //for to iterate throught the points
     for (var i = 0; i < points.length; i++) {
+
+        //angle at which each points will move
+        var angle = map(noise(points[i].x, points [i].y), 0, 1, 0, 720);
+
+        //vector to each point based on the angle
+        points[i].add(createVector(cos(angle), sin(angle)));
+
+
+
         //Circle at the x and y coordinate of each point
         ellipse(points[i].x, points[i].y, 5);
     }
