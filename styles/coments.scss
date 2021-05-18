@@ -1,0 +1,12 @@
+.list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.comments{
+    border: 1px solid gray;
+    width: 300px;
+    display: block;
+    text-decoration: none;
+    margin:20px;
+}
