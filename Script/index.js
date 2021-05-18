@@ -7,7 +7,7 @@ function setup () {
     angleMode(DEGREES);
     noiseDetail(1);
 
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 4; i++) {
         bolas[i] = new Balls (random(100, 900), random(100, 600), 
         random(0, 255), random(0, 255), random(0, 255),
         random(0, 255), random(0, 255), random(0, 255)

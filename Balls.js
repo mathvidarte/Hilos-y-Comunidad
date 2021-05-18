@@ -41,8 +41,8 @@ class Balls {
 
          
         
-        if (frameCount * 5 <= points.length) {
-            var max = frameCount * 5;
+        if (frameCount * 3 <= points.length) {
+            var max = frameCount * 3;
         } else {
             var max = points.length;
         }
@@ -73,9 +73,8 @@ class Balls {
             if (dist(this.posx, this.posy, points[i].x, points[i].y) < 100) {
     
                 //Circle at the x and y coordinate of each point
-                ellipse(points[i].x, points[i].y, 1.5);
+                ellipse(points[i].x, points[i].y, 2);
             }
         }
-
     }
 }
