@@ -57,7 +57,7 @@ class Balls {
 
             //alpha value
             var alpha = map(dist(this.posx, this.posy, points[i].x, points[i].y),
-            0, 350, 255, 0)
+            0, 180, 255, 0)
     
             fill(r,g,b, alpha);
     
@@ -70,7 +70,7 @@ class Balls {
             points[i].add(createVector(cos(angle), sin(angle)));
     
             //limited in a circle
-            if (dist(this.posx, this.posy, points[i].x, points[i].y) < 100) {
+            if (dist(this.posx, this.posy, points[i].x, points[i].y) < 200) {
     
                 //Circle at the x and y coordinate of each point
                 ellipse(points[i].x, points[i].y, 1.5);
