@@ -1,0 +1,23 @@
+
+
+.list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  
+  .comments {
+    border: 1px solid #5420b4;
+    width: 300px;
+    display: block;
+    text-decoration: none;
+    margin: 20px;
+    border-radius: 5px;
+    background-color: #5420b4;
+    color: white;
+    padding-left: 10px;
+
+  }
+  

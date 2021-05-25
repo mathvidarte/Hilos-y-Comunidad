@@ -1,7 +1,11 @@
 const list = document.querySelector('.list');
+
 db.collection('comments')
 .get()
 .then((querySnapshot) => {
+
+    list.innerHTML = '';
+    
     querySnapshot.forEach((doc) => {
         const data = doc.data();
         const comment = document.createElement('section');

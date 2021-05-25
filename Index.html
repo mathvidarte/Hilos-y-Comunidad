@@ -4,20 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href = "./styles/index.css">
     <title>Hilos y Comunidad</title>
 </head>
 <body>
     <div class="container">
-        <h1>Hello World</h1>
 
-        <a href="./index.html">Pantalla 1</a>
-        <a href="./mapa.html">Pantalla 2</a>
-        <a href="./coments.html">Pantalla 3</a>
+        <h1>HILOS Y COMUNIDAD</h1>
+
+
+        <form class = "write">
+            <input id= "reflection" name="reflection" type="text" placeholder="¿Cómo te sientes?">
+         
+            <div class="buttons">
+                <button class="write__btn" type ="submit">Agregar</button>
+                <button class="write__change">Reflexiones</button>
+            </div>
+            
+        </form>
+
     </div>
 
-<script src="./Balls.js"></script>   
-<script src="./Script/index.js"></script>   
-<script src="./Script/p5.js"></script>
-    
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-storage.js"></script>
+
+    <script src="./Script/general.js"></script>
+    <script src="./Balls.js"></script>   
+    <script src="./Script/index.js"></script>   
+    <script src="./Script/p5.js"></script>
+        
 </body>
 </html>

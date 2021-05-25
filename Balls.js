@@ -33,16 +33,14 @@ class Balls {
     shuffle(points, true)
 
     //Random direction and path
-    mult = random(0.002, 0.01);
+    mult = random(0.001, 0.01);
 
     }
 
     pintar() {
 
-         
-        
-        if (frameCount * 5 <= points.length) {
-            var max = frameCount * 5;
+        if (frameCount * 10 <= points.length) {
+            var max = frameCount * 10;
         } else {
             var max = points.length;
         }
@@ -57,7 +55,7 @@ class Balls {
 
             //alpha value
             var alpha = map(dist(this.posx, this.posy, points[i].x, points[i].y),
-            0, 180, 255, 0)
+            0, 490, 255, 0)
     
             fill(r,g,b, alpha);
     
@@ -70,12 +68,17 @@ class Balls {
             points[i].add(createVector(cos(angle), sin(angle)));
     
             //limited in a circle
-            if (dist(this.posx, this.posy, points[i].x, points[i].y) < 200) {
+
+            ellipse(points[i].x, points[i].y, 2.5);
+          
+
+            /*if (dist(this.posx, this.posy, points[i].x, points[i].y) < 400) {
     
                 //Circle at the x and y coordinate of each point
-                ellipse(points[i].x, points[i].y, 1.5);
-            }
-        }
+                ellipse(points[i].x, points[i].y, 1.0);
+                
 
+            }*/
+        }
     }
 }

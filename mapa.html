@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href = "./styles/index.css">
     <title>Document</title>
-    <link rel="stylesheet" href = "./styles/main.css">
 
 </head>
 <body>
@@ -13,27 +13,17 @@
         <a href="./mapa.html">Pantalla 2</a>
         <a href="./coments.html">Pantalla 3</a>
 
-    <form class = "productForm">
-        <p class="productForm__loading hidden">cargando...</p>
-        <p class="productForm__success hidden">reflexión agregada exitosamente</p>
-        <p class="productForm__error hidden">ha ocurrido un error, intente nuevamente</p>
-    
-        <label class="productForm__label" for="reflection">¿Qué sientes?</label>
-        <input class = "productForm__input" id= "reflection" name="reflection" type="text" placeholder="¿Cómo te sientes acerca de las manifestaciones del pueblo hacia al gobierno? escribe una reflexión.">
-     
-        <button class="productForm__btn" type ="submit">Enviar</button>
-    </form>
+    <h1>5 REFLEXIONES</h1>
+
+
     <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-storage.js"></script>
     
     <script src="./Script/general.js"></script>
-   
     <script src="./Script/mapa.js"></script>
 
-    
-    boton debe subir a firebase y una variable que empiece en 0 y que cuente los comentarios.
-
+    <!--boton debe subir a firebase y una variable que empiece en 0 y que cuente los comentarios.-->
 
 </body>
 </html>
