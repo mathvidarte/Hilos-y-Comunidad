@@ -1,27 +1,94 @@
-let bolas = [];
+const productForm = document.querySelector('.write');
+const write__change = document.querySelector('.write__change');
+const write__btn = document.querySelector('.write__btn');
 
+let contador = 0;
+
+productForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    //contador ++;
+
+    const comment = {
+       reflection: productForm.reflection.value,
+    };
+
+ //espera a subir la información al firestore
+ db.collection('comments').add(comment)
+ .then(function(docRef){
+     console.log('comemnt added',docRef.id);
+     window.location.href='./mapa.html';
+    })
+});
+
+
+
+write__change.addEventListener('click', function() {
+    window.location.href='./coments.html';
+});
+
+
+let interface = 0;
+
+function handleChanges () {
+    interface++;
+    if(interface >= 2) {
+        interface = 0;
+    }
+//AQUI SE COLOCAN CUANDO SE TENGAN VARIOS GRUPOS DE 4 BOLITAS 
+}
+
+setInterval(handleChanges, 5000);
+
+
+
+
+
+
+
+
+
+let bolas = [];
+let one, two, three, four;
 
 function setup () {
-    createCanvas(windowWidth, windowHeight);
-    background (38);
+    createCanvas(1400,630);
+    //background (40);
     angleMode(DEGREES);
     noiseDetail(1);
 
-    for (let i = 0; i < 4; i++) {
+
+    one = new Balls (200,150,random(0, 255),random(0, 255),random(0, 255),
+    random(0, 255),random(0, 255),random(0, 255));
+
+    two = new Balls (520,350,random(0, 255),random(0, 255),random(0, 255),
+    random(0, 255),random(0, 255),random(0, 255));
+
+    three = new Balls (850,150,random(0, 255),random(0, 255),random(0, 255),
+    random(0, 255),random(0, 255),random(0, 255));
+
+    four = new Balls (1200,350,random(0, 255),random(0, 255),random(0, 255),
+    random(0, 255),random(0, 255),random(0, 255));
+
+
+    /*for (let i = 0; i < 2; i++) {
         bolas[i] = new Balls (random(100, 900), random(100, 600), 
         random(0, 255), random(0, 255), random(0, 255),
         random(0, 255), random(0, 255), random(0, 255)
         ); 
-    }
+    }*/
 
-    console.log()
     
 }
 
 function draw () {
     noStroke(); 
 
-    for (let i = 0; i < bolas.length; i++) {
+    one.pintar();
+    two.pintar();
+    three.pintar();
+    four.pintar();
+
+    /*for (let i = 0; i < bolas.length; i++) {
         bolas[i].pintar();
-    }
+    }*/
 }

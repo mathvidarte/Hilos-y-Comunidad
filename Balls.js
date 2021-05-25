@@ -14,7 +14,7 @@ class Balls {
         this.b2 = b2;
 
     //number of points in each row
-    var density = 50;
+    var density = 40;
     // distance between each point
     var space = width / density;
 
@@ -39,10 +39,8 @@ class Balls {
 
     pintar() {
 
-         
-        
-        if (frameCount * 3 <= points.length) {
-            var max = frameCount * 3;
+        if (frameCount * 10 <= points.length) {
+            var max = frameCount * 10;
         } else {
             var max = points.length;
         }
@@ -70,10 +68,10 @@ class Balls {
             points[i].add(createVector(cos(angle), sin(angle)));
     
             //limited in a circle
-            if (dist(this.posx, this.posy, points[i].x, points[i].y) < 100) {
+            if (dist(this.posx, this.posy, points[i].x, points[i].y) < 120) {
     
                 //Circle at the x and y coordinate of each point
-                ellipse(points[i].x, points[i].y, 2);
+                ellipse(points[i].x, points[i].y, 1.7);
             }
         }
     }
