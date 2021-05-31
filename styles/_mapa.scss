@@ -1,0 +1,17 @@
+
+        button {
+            background: rgb(251, 255, 69);
+            height: 40px;
+            width: 150px;
+            font-size: 20px;
+            font-weight: 900;
+            color: rgb(36, 36, 36);
+            border-radius: 5px;
+            border-style: none;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+            transition: 0.2s linear;
+
+            &:hover {
+                background: rgb(230, 182, 26);
+            }
+        }

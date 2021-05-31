@@ -1,3 +1,15 @@
+const buttons__index = document.querySelector('.buttons__index');
+const buttons__map = document.querySelector('.buttons__map');
+//boton para solo ver las reflexiones y regresar
+buttons__index.addEventListener('click', function() {
+    window.location.href="/index.html";
+});
+
+buttons__map.addEventListener('click', function() {
+    window.location.href="/mapa.html";
+});
+
+
 const list = document.querySelector('.list');
 
 db.collection('comments')

@@ -1,6 +1,19 @@
+const see__reflections = document.querySelector('.see__reflections');
+const see__gotowrite = document.querySelector('.see__gotowrite');
+//boton para solo ver las reflexiones y regresar
+see__reflections.addEventListener('click', function() {
+    window.location.href="/coments.html";
+});
+
+see__gotowrite.addEventListener('click', function() {
+    window.location.href="/index.html";
+});
+
+
+///////////////////////////////P5.JS///////////////////////////////
 
 let noiseMax = 2;
-let phase  = 0;
+
 let zoff =0;
 
 function setup(){
@@ -19,11 +32,9 @@ function draw(){
             let r = map(noise(xoff,yoff, zoff),0,1,100,200);
             let x = r* cos(a);
             let y = r* sin(a);
-            vertex(x,y);
-        
+            vertex(x,y);  
     }
     endShape(CLOSE);
-    
-    zoff += 0.01;
+    zoff += 0.02;
 
 }

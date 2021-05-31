@@ -1,23 +1,31 @@
 const productForm = document.querySelector('.write');
 const write__change = document.querySelector('.write__change');
 const write__btn = document.querySelector('.write__btn');
+const commentError = document.querySelector('.index__error');
 
+//submit del form de escribir
 productForm.addEventListener('submit', function (event) {
     event.preventDefault();
-    //contador ++;
 
     const comment = {
        reflection: productForm.reflection.value,
     };
 
- //espera a subir la información al firestore
- db.collection('comments').add(comment)
- .then(function(docRef){
-     console.log('comemnt added',docRef.id);
-     window.location.href='./mapa.html';
-    })
+    if (!comment.reflection) {
+        commentError.innerText = 'Necesitas nombrar el producto';
+        commentError.classList.remove('hidden');
+        return;
+    }
+
+    //espera a subir la información al firestore
+    db.collection('comments').add(comment)
+    .then(function(docRef){
+        counter.push(docRef.id);
+        window.location.href='./mapa.html';
+    });
 });
 
+//boton para no subir nada, solo ver las reflexiones
 write__change.addEventListener('click', function() {
     window.location.href='./mapa.html';
 });
@@ -106,6 +114,6 @@ function draw () {
     noStroke(); 
     one.pintar();
 
-    console.log(changes);
+    
   
 }
