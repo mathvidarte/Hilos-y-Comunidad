@@ -1,19 +1,6 @@
 const productForm = document.querySelector('.write');
 const write__change = document.querySelector('.write__change');
 const write__btn = document.querySelector('.write__btn');
-const numerito = document.querySelector('.numerito');
-
-let counter = [];
-
-const handleCounter = (querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-        console.log(doc.id);
-        counter.push(doc.id);
-        numerito.innerText = counter.length;
-    });
-}
-
-let comentarios = db.collection('comments').get().then(handleCounter);
 
 
 //submit del form de escribir
@@ -28,7 +15,6 @@ productForm.addEventListener('submit', function (event) {
     db.collection('comments').add(comment)
     .then(function(docRef){
         counter.push(docRef.id);
-        numerito.innerText = counter.length;
         window.location.href='./mapa.html';
     });
 });
