@@ -12,14 +12,17 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 
-let counter = [];
+const counter = [];
 const numerito = document.querySelector('.numerito');
 
 const handleCounter = (querySnapshot) => {
   querySnapshot.forEach((doc) => {
       counter.push(doc.id);
       if(!numerito) return;
+      number = counter.length;
       numerito.innerText = counter.length;
+
+      load();
   });
 }
 
