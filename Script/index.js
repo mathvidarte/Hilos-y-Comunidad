@@ -1,23 +1,39 @@
 const productForm = document.querySelector('.write');
 const write__change = document.querySelector('.write__change');
 const write__btn = document.querySelector('.write__btn');
+const numerito = document.querySelector('.numerito');
 
+let counter = [];
+
+const handleCounter = (querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        console.log(doc.id);
+        counter.push(doc.id);
+        numerito.innerText = counter.length;
+    });
+}
+
+let comentarios = db.collection('comments').get().then(handleCounter);
+
+
+//submit del form de escribir
 productForm.addEventListener('submit', function (event) {
     event.preventDefault();
-    //contador ++;
 
     const comment = {
        reflection: productForm.reflection.value,
     };
 
- //espera a subir la información al firestore
- db.collection('comments').add(comment)
- .then(function(docRef){
-     console.log('comemnt added',docRef.id);
-     window.location.href='./mapa.html';
-    })
+    //espera a subir la información al firestore
+    db.collection('comments').add(comment)
+    .then(function(docRef){
+        counter.push(docRef.id);
+        numerito.innerText = counter.length;
+        window.location.href='./mapa.html';
+    });
 });
 
+//boton para no subir nada, solo ver las reflexiones
 write__change.addEventListener('click', function() {
     window.location.href='./mapa.html';
 });
@@ -106,6 +122,6 @@ function draw () {
     noStroke(); 
     one.pintar();
 
-    console.log(changes);
+    
   
 }
