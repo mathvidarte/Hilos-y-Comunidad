@@ -27,72 +27,25 @@ write__change.addEventListener('click', function() {
 });
 
 
-let interface = 0;
-
-function handleChanges () {
-    interface++;
-    if(interface >= 2) {
-        interface = 0;
-    }
-//AQUI SE COLOCAN CUANDO SE TENGAN VARIOS GRUPOS DE 4 BOLITAS 
-}
-
-setInterval(handleChanges, 5000);
 
 
-
-
-
-
-
-
-
-let bolas = [];
-let one, two, three, four;
+let one;
 
 function setup () {
     createCanvas(windowWidth, windowHeight);
-    //background (40);
     angleMode(DEGREES);
     noiseDetail(1);
 
-
-    one = new Balls (300,150,random(0, 255),random(0, 255),random(0, 255),
-    random(0, 255),random(0, 255),random(0, 255));
-
-    two = new Balls (1200,350,random(0, 255),random(0, 255),random(0, 255),
-    random(0, 255),random(0, 255),random(0, 255));
-
-    three = new Balls (850,150,random(0, 255),random(0, 255),random(0, 255),
-    random(0, 255),random(0, 255),random(0, 255));
-
-    four = new Balls (1100,350,random(0, 255),random(0, 255),random(0, 255),
-    random(0, 255),random(0, 255),random(0, 255));
-
-
-    /*for (let i = 0; i < 2; i++) {
-        bolas[i] = new Balls (random(100, 900), random(100, 600), 
-        random(0, 255), random(0, 255), random(0, 255),
-        random(0, 255), random(0, 255), random(0, 255)
-        ); 
-    }*/
-
+    one = new Balls (width/2, height/2);
     
 }
 
 function draw () {
     noStroke(); 
-
     one.pintar();
-    two.pintar();
 
-    stroke(255);
-    textSize (50);
-    text('#MeDuelesColombia', 550, 200);
-    //three.pintar();
-    //four.pintar();
-
-    /*for (let i = 0; i < bolas.length; i++) {
-        bolas[i].pintar();
-    }*/
+    /*fill(210);
+    textSize (40);
+    text('#MeDuelesColombia', 550, 200);*/
+  
 }

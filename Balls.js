@@ -2,19 +2,21 @@
 var points =[];
 var mult;
 
+//random color
+var r1;
+var r2;
+var g1;
+var g2;
+var b1;
+var b2;
+
 class Balls {
-    constructor(posx, posy, r1, g1, b1, r2, g2, b2) {
+    constructor(posx, posy) {
         this.posx = posx;
         this.posy = posy;
-        this.r1 = r1;
-        this.g1 = g1;
-        this.b1 = b1;
-        this.r2 = r2;
-        this.g2 = g2;
-        this.b2 = b2;
 
     //number of points in each row
-    var density = 50;
+    var density = 70;
     // distance between each point
     var space = width / density;
 
@@ -30,17 +32,24 @@ class Balls {
         }
     }
 
+    r1 = random(0, 255);
+    r2 = random(0, 255);
+    g1 = random(0, 255);
+    g2 = random(0, 255);
+    b1 = random(0, 255);
+    b2 = random(0, 255);
+
     shuffle(points, true)
 
     //Random direction and path
-    mult = random(0.001, 0.01);
+    mult = random(0.002, 0.01);
 
     }
 
     pintar() {
 
-        if (frameCount * 10 <= points.length) {
-            var max = frameCount * 10;
+        if (frameCount * 2 <= points.length) {
+            var max = frameCount * 2;
         } else {
             var max = points.length;
         }
@@ -49,36 +58,23 @@ class Balls {
         for (var i = 0; i < max; i++) {
     
             //add color cool
-            var r = map(points [i].x, 0, this.posx, this.r1, this.r2);
-            var g = map(points [i].y, 0, this.posy, this.g1, this.g2);
-            var b = map(points [i].x, 0, this.posx, this.b1, this.b2);
+            var r = map(points [i].x, 0, width, r1, r2);
+            var g = map(points [i].y, 0, height, g1, g2);
+            var b = map(points [i].x, 0, width, b1, b2);
 
-            //alpha value
-            var alpha = map(dist(this.posx, this.posy, points[i].x, points[i].y),
-            0, 490, 255, 0)
-    
-            fill(r,g,b, alpha);
+            fill(r,g,b);
     
             //angle at which each points will move
-            var angle = map(noise(points[i].x * mult, 
-                points [i].y * mult),
-                0, 1, 0, 720);
+            var angle = map(noise(points[i].x, points [i].y), 0, 1, 0, 720);
+            var angle = map(noise(points[i].x * mult, points [i].
+                y * mult), 1, 0, 1, 720);
     
             //vector to each point based on the angle
             points[i].add(createVector(cos(angle), sin(angle)));
     
-            //limited in a circle
+            //Circle at the x and y coordinate of each point
+            ellipse(points[i].x, points[i].y, 1);
 
-            ellipse(points[i].x, points[i].y, 2.5);
-          
-
-            /*if (dist(this.posx, this.posy, points[i].x, points[i].y) < 400) {
-    
-                //Circle at the x and y coordinate of each point
-                ellipse(points[i].x, points[i].y, 1.0);
-                
-
-            }*/
         }
     }
 }
