@@ -43,6 +43,8 @@ let changes = 0;
 function handleChanges () {
     changes++;
 
+    
+
     if(changes == 1) {
         hashtag__one.style.display = 'block';
         hashtag__two.style.display = 'none';
