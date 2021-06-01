@@ -7,7 +7,7 @@ class Line {
     }
 
     pintar() {
-console.log(x+'ddddd'+y);
+        
         beginShape();
         for(let a = 0; a < TWO_PI; a += 0.01){
             let xoff = map(cos(a),-1,1,0,noiseMax);

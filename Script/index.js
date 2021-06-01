@@ -42,10 +42,10 @@ let changes = 0;
 
 function handleChanges () {
     changes++;
-    
-    if(changes == 1){
-        hashtag__one.style.display = 'none';
-        hashtag__two.style.display = 'block';
+
+    if(changes == 1) {
+        hashtag__one.style.display = 'block';
+        hashtag__two.style.display = 'none';
         hashtag__three.style.display = 'none';
         hashtag__four.style.display = 'none';
         hashtag__five.style.display = 'none';
@@ -54,6 +54,15 @@ function handleChanges () {
     
     if(changes == 2){
         hashtag__one.style.display = 'none';
+        hashtag__two.style.display = 'block';
+        hashtag__three.style.display = 'none';
+        hashtag__four.style.display = 'none';
+        hashtag__five.style.display = 'none';
+        hashtag__six.style.display = 'none';
+    }
+    
+    if(changes == 3){
+        hashtag__one.style.display = 'none';
         hashtag__two.style.display = 'none';
         hashtag__three.style.display = 'block';
         hashtag__four.style.display = 'none';
@@ -61,7 +70,7 @@ function handleChanges () {
         hashtag__six.style.display = 'none';
     }
     
-    if(changes == 3) {
+    if(changes == 4) {
         hashtag__one.style.display = 'none';
         hashtag__two.style.display = 'none';
         hashtag__three.style.display = 'none';
@@ -70,7 +79,7 @@ function handleChanges () {
         hashtag__six.style.display = 'none';
     }
 
-    if(changes == 4) {
+    if(changes == 5) {
         hashtag__one.style.display = 'none';
         hashtag__two.style.display = 'none';
         hashtag__three.style.display = 'none';
@@ -79,7 +88,7 @@ function handleChanges () {
         hashtag__six.style.display = 'none';
     }
 
-    if(changes >= 5) {
+    if(changes >= 6) {
         changes = 0;
         hashtag__one.style.display = 'none';
         hashtag__two.style.display = 'none';
@@ -90,7 +99,7 @@ function handleChanges () {
     }
 }
 
-setInterval(handleChanges, 5000);
+setInterval(handleChanges, 2000);
 
 
 
@@ -102,14 +111,17 @@ setInterval(handleChanges, 5000);
 let one;
 let prueba = [];
 
+var timestamp = 0;
+var index = 0;
+
 function setup () {
     createCanvas(windowWidth, windowHeight);
     angleMode(DEGREES);
     noiseDetail(1);
 
-    one = new Balls (width/2, height/2);
+    //one = new Balls (width/2, height/2);
 
-    for (let i = 0; i < 1; i++) {
+    for (let i = 0; i < 2; i++) {
         prueba[i] = new Balls (width/2, height/2); 
     }
     
@@ -117,11 +129,19 @@ function setup () {
 
 function draw () {
     noStroke(); 
-    one.pintar();
-    
-    console.log(x+'ddddd'+y);
+    //one.pintar();
 
     for (let i = 0; i < prueba.length; i++) {
-        prueba[i].pintar();
+        prueba[index].pintar();
     }
+  
+    if (millis() - timestamp > 5000) {
+        index++;
+        timestamp = millis();
+        
+        if (index > prueba.length - 1){
+            index = 0;
+        }
+  }
+
 }

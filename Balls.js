@@ -49,10 +49,8 @@ class Balls {
 
     pintar() {
 
-        
-
-        if (frameCount * 2 <= points.length) {
-            var max = frameCount * 2;
+        if (frameCount * 1 <= points.length) {
+            var max = frameCount * 1;
         } else {
             var max = points.length;
         }
