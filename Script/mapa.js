@@ -3,11 +3,11 @@ const see__gotowrite = document.querySelector('.see__gotowrite');
 
 //boton para solo ver las reflexiones y regresar
 see__reflections.addEventListener('click', function() {
-    window.location.href="/coments.html";
+    window.location.href="./coments.html";
 });
 
 see__gotowrite.addEventListener('click', function() {
-    window.location.href="/index.html";
+    window.location.href="./index.html";
 });
 
 
