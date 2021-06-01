@@ -14,13 +14,14 @@ see__gotowrite.addEventListener('click', function() {
 
 let commentsArray = [];
 let variacion = 5;
+let zoff = 0.01;
 
 
 const load = (function setup(){
     createCanvas(windowWidth, windowHeight);
  
     for (let i = 0; i < number; i++) {
-        commentsArray[i] = new Line (variacion); 
+        commentsArray[i] = new Line (variacion, zoff); 
         variacion += 15;
     }
 });
