@@ -42,7 +42,6 @@ let changes = 0;
 
 function handleChanges () {
     changes++;
-
     
 
     if(changes == 1) {
@@ -101,7 +100,7 @@ function handleChanges () {
     }
 }
 
-setInterval(handleChanges, 2000);
+setInterval(handleChanges, 9000);
 
 
 
