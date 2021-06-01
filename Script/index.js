@@ -12,7 +12,7 @@ productForm.addEventListener('submit', function (event) {
     };
 
     if (!comment.reflection) {
-        commentError.innerText = 'Necesitas nombrar el producto';
+        commentError.innerText = 'Escribe una relfexión antes de agregar';
         commentError.classList.remove('hidden');
         return;
     }
@@ -90,7 +90,7 @@ function handleChanges () {
     }
 }
 
-setInterval(handleChanges, 2000);
+setInterval(handleChanges, 5000);
 
 
 
@@ -100,6 +100,7 @@ setInterval(handleChanges, 2000);
 ///////////////////////////////P5.JS///////////////////////////////
 
 let one;
+let prueba = [];
 
 function setup () {
     createCanvas(windowWidth, windowHeight);
@@ -107,13 +108,20 @@ function setup () {
     noiseDetail(1);
 
     one = new Balls (width/2, height/2);
+
+    for (let i = 0; i < 1; i++) {
+        prueba[i] = new Balls (width/2, height/2); 
+    }
     
 }
 
 function draw () {
     noStroke(); 
     one.pintar();
-
     
-  
+    console.log(x+'ddddd'+y);
+
+    for (let i = 0; i < prueba.length; i++) {
+        prueba[i].pintar();
+    }
 }

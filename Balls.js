@@ -1,6 +1,7 @@
 //Array for the starting points
 var points =[];
 var mult;
+var x, y;
 
 //random color
 var r1;
@@ -21,8 +22,8 @@ class Balls {
     var space = width / density;
 
     //loop for all the starting points
-    for (var x = 0; x < width; x += space) {
-        for (var y = 0; y < height; y += space) {
+    for (x = 0; x < width; x += space) {
+        for (y = 0; y < height; y += space) {
 
             //vector for each x and y coordinate
             var p = createVector(x + random(-10, 10), y + random (-10, 10));
@@ -48,6 +49,8 @@ class Balls {
 
     pintar() {
 
+        
+
         if (frameCount * 2 <= points.length) {
             var max = frameCount * 2;
         } else {
@@ -65,9 +68,12 @@ class Balls {
             fill(r,g,b);
     
             //angle at which each points will move
+            var popo = 720;
+            
             var angle = map(noise(points[i].x, points [i].y), 0, 1, 0, 720);
             var angle = map(noise(points[i].x * mult, points [i].
-                y * mult), 1, 0, 1, 720);
+                y * mult), 1, 0, 1, popo);
+
     
             //vector to each point based on the angle
             points[i].add(createVector(cos(angle), sin(angle)));
